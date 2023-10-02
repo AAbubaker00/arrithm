@@ -41,9 +41,6 @@ app.get("/api/v1/:latextformat", (request, res) => {
         //   console.log(jsonData["props"]["pageProps"]["response"]["mathSolverResult"]["actions"]);
 
         res.json(jsonData["props"]["pageProps"]["response"]["mathSolverResult"]["actions"]);
-
-        // Now 'jsonData' contains the parsed JSON data from the script tag
-        // console.log(jsonData);
       } else {
         console.log("Script tag with ID '__NEXT_DATA__' not found or empty.");
       }
