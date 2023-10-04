@@ -13,7 +13,7 @@ function formatEquation(equ) {
 function solver(exp, axios, cheerio, res) {
   const expression = (exp);
 
-  console.log(_FixedEndPoint+expression)
+  // console.log(_FixedEndPoint+expression)
 
   axios
     .get(_FixedEndPoint + expression)
