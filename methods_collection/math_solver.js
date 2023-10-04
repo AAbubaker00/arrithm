@@ -5,13 +5,13 @@ function formatEquation(equ) {
   equ = equ.replace(/\\\\/g, "`");
   equ = equ.replace(/\\/g, "`");
   equ = equ.replace(/sqrt/g, "\\sqrt");
-  equ = equ.replace(/ /g, "");
+  // equ = equ.replace(/ /g, "");
 
   return equ;
 }
 
 function solver(exp, axios, cheerio, res) {
-  const expression = formatEquation(exp);
+  const expression = (exp);
 
   console.log(_FixedEndPoint+expression)
 

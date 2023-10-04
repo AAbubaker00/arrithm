@@ -1,28 +1,201 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>API Landing Page</title>
+    <title>SolveXpress API Documentation</title>
+    <style>
+      /* Center-align the content */
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style the main heading */
+      h1 {
+        color: #333;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* Style section containers */
+      .section-container {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px;
+        text-align: left;
+      }
+
+      /* Style section headings */
+      h2 {
+        color: #0074cc;
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      /* Style the unordered list */
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      /* Style list items */
+      li {
+        margin-bottom: 10px;
+      }
+
+      /* Style links within list items */
+      li a {
+        color: #0074cc;
+        text-decoration: none;
+      }
+
+      /* Style syntax rules */
+      #syntax-rules {
+        list-style: none;
+        padding: 0;
+      }
+
+      #syntax-rules li {
+        margin-bottom: 10px;
+      }
+
+      #syntax-rules .not-to-do {
+        color: red; /* Red for things not to do */
+      }
+
+      /* Style the coding editor */
+      .coding-editor {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        border-radius: 5px;
+        padding: 20px;
+        overflow-x: auto;
+      }
+
+      /* Style the footer */
+      footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #888;
+      }
+      /* ... (previous styles) */
+
+      /* Style the section containers */
+      .section-container {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px;
+        text-align: left;
+      }
+
+      /* Style section headings */
+      .section-container h2 {
+        color: #0074cc;
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      /* Style the unordered list */
+      .section-container ul {
+        list-style: disc; /* Use disc bullet points */
+        padding-left: 20px; /* Add some padding for spacing */
+      }
+
+      /* Style list items */
+      .section-container li {
+        margin-bottom: 10px;
+      }
+
+      /* Style links within list items */
+      .section-container li a {
+        color: #0074cc;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to the API Landing Page</h1>
-    <p>This is a simple landing page for your API.</p>
+    <h1>SolveXpress API Documentation</h1>
 
-    <h2>API Usage</h2>
-    <p>You can use this API to perform certain calculations or tasks.</p>
+    <!-- API Paths Section -->
+    <div class="section-container">
+      <h2>API Paths</h2>
+      <ul>
+        <li>
+          <a href="/api/v1/solve-expression/">/api/v1/solve-expression/{latextExpression}</a>
+        </li>
+        <!-- Add more API paths here -->
+      </ul>
+    </div>
 
-    <h3>Example:</h3>
-    <p>Calculate the integral of a function:</p>
-    <form action="" method="GET">
-      <label for="expression">Enter a mathematical expression:</label>
-      <input type="text" name="expression" id="expression" required />
-      <input type="submit" value="Calculate" />
-    </form>
+    <!-- Input Syntax Rules Section -->
+    <div class="section-container">
+      <h2>Input Syntax Rules</h2>
+      <p>Here are the input syntax rules:</p>
+      <ul>
+        <li>Remove spaces from input.</li>
+        <li>If a backslash "\" is present at the beginning, convert it to "%5C".</li>
+        <li>URL-encode special characters in the expression, such as "&" as "%26".</li>
+        <li>Replace "(" with "{".</li>
+        <li>Replace ")" with "}."</li>
+        <li>Replace "\\" with "`".</li>
+        <li>Replace "\" with "`".</li>
+        <li>Replace "sqrt" with "\sqrt".</li>
+        <!-- Add more input syntax rules here -->
+      </ul>
+    </div>
 
-    <h2>About</h2>
-    <p>This landing page provides some basic information about your API and demonstrates how to use it.</p>
+    <!-- Get Started Section -->
+    <div class="section-container">
+      <h2>Get Started</h2>
+      <p>
+        To get started, use the following example URL path to solve an expression:
+        <a href="/api/v1/solve-expression/%5Cint_{1}^{3}4xdx"> /api/v1/solve-expression/%5Cint_{1}^{3}4xdx </a>
+      </p>
+      <p>Example Response:</p>
+      <div class="coding-editor">
+        <pre>
+{
+  "problem": "$$int_{1}^{3}4xdx$$",
+  "problemCategory": "ComplexNumber",
+  "actions": [
+    {
+      "actionName": "Evaluate",
+      "solution": "$4idnx^{2}t_{1}^{3}$",
+      "templateSteps": [
+        {
+          "templateName": "Solution Steps",
+          "steps": [
+            {
+              "hint": "Do the arithmetic.",
+              "step": "Multiply $x$ and $x$ to get $x^{2}$.",
+              "expression": "$$int_{1}^{3}\times 4x^{2}d$$ ",
+              "prevExpression": "$$int_{1}^{3}4xdx$$"
+            },
+            {
+              "hint": "Multiply two factors together.",
+              "step": "Multiply $i$ and $4$ to get $4i$.",
+              "expression": "$$4int_{1}^{3}x^{2}d$$ ",
+              "prevExpression": "$$int_{1}^{3}\times 4x^{2}d$$ "
+            }
+          ]
+        }
+      ],
+      "shouldContainSteps": false
+    }
+  ],
+  "keyboardLatexInput": "",
+  "detectedLatex": "int_{1}^{3}4xdx"
+}
+        </pre>
+      </div>
+    </div>
 
+    <!-- Footer Section -->
     <footer>
-      <p>&copy; 2023 Your Company Name</p>
+      <p>&copy; 2023 CoKo Lab</p>
     </footer>
   </body>
 </html>
