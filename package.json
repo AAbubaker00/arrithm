@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "tyep": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -12,6 +13,7 @@
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.18.2",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "puppeteer": "^21.3.6"
   }
 }
